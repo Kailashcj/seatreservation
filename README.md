@@ -1,7 +1,7 @@
 # Restaurant Seat Reservation System:
 A python, flask and mongodb based system for seat booking
 
-![Seat Reservation]https://github.com/Kailashcj/seatreservation/blob/master/restaurant_check_availability.png
+![Seat Reservation](restaurant_check_availability.png)
 
 # Introduction:
 
