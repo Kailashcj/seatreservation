@@ -39,6 +39,8 @@ Following version of binaries should be installed on a linux system or python vi
 - Seat cancellation and releasing the seat back to available pool is not implemented
 - Claim seat feature, which releases the seat to available pool if a customer doesn't show-up within 30 minutes is not implemented
 - releasing a reservation at the time of customer billing is not implemented. This feature would help to identify making seats available for walk-ins.
+- Logic in the app.py can be ported into a python object based structure. This will help to scale the application to add more features
+needed for a restaurant like, billing, food ordering etc. This can be discussed.
 
 # Usage
 
