@@ -48,3 +48,4 @@ Following version of binaries should be installed on a linux system or python vi
 4. Open a browser and run below url's:
     - Check Seat availability: http://127.0.0.1:5000/checkseatavailability?date=2020-03-15
     - Book Seat : http://127.0.0.1:5000/book?date=2020-03-14&time=1000&customer_id=y&num_people=2
+5. You can modify the date, time and num_people values in above URL's
