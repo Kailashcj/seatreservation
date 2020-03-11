@@ -102,8 +102,8 @@ def do_booking(table_detail, time, customer_id):
         slots[booking_slot] = customer_id
     
 @app.route('/')
-def hello():
-    return "Hello World!"
+def welcome():
+    return "Welcome to Seat Reservation System!"
 
 @app.route('/book')
 def book():
