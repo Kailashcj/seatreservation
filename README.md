@@ -55,7 +55,7 @@ needed for a restaurant like, billing, food ordering etc. This can be discussed.
 1. Install listed requirements on a linux system
 2. run mongo on a terminal by typing command $ mongo
 3. run flask app on a terminal by typing command $ python3 app.py
-4. Open a browser and run below url's:
+4. Open a browser and type below url's:
     - View Bookings : http://127.0.0.1:5000/viewbookings?date=2020-03-14
     - Check Seat availability: http://127.0.0.1:5000/checkseatavailability?date=2020-03-15
     - Book Seat : http://127.0.0.1:5000/book?date=2020-03-14&time=1000&customer_id=y&num_people=2
