@@ -36,6 +36,18 @@ tslots = {
     '1000': ['1000']
 }
 
+@app.route('/viewbookings')
+def view_current_bookings():
+    date = request.args.get('date')
+    db = client['seats']
+    bookings = db['bookings'].find({'date': date})
+    current_bookings = {}
+    print(bookings)
+    for booking in bookings:
+        if booking['table'] not in current_bookings:
+            current_bookings[booking['table']] = booking['slots']
+    return current_bookings
+
 @app.route('/checkseatavailability')
 def check_availability():
     date = request.args.get('date')
@@ -56,20 +68,19 @@ def check_availability():
             elif int(t[1:]) <= 12:
                 available[6][t] = all_slots
         else:
-            for k in current_bookings: # for blocked tables, check possible available slots
+            for table in current_bookings: # for blocked tables, check possible available slots
                 temp = []
-                for time in current_bookings[k]:
+                for time in current_bookings[table]:
                     temp.append(time)
                 sublist = list(set(all_slots) - set(temp))
-                if len(sublist) >= 3:
-                    for s in tslots:
-                         if set(tslots[s]) >= set(sublist):
-                             if int(k[1:]) <= 5:
-                                 available[2][k] = s
-                             elif int(k[1:]) <= 10:
-                                 available[4][k] = s
-                             elif int(k[1:]) <= 12:
-                                 available[6][k] = s
+                for slot in tslots:
+                     if set(tslots[slot]) <= set(sublist):
+                         if int(table[1:]) <= 5:
+                             available[2][table] = slot
+                         elif int(table[1:]) <= 10:
+                             available[4][table] = slot
+                         elif int(table[1:]) <= 12:
+                             available[6][table] = slot
     return available
 
 #tables availabile for 2, 4 and 6 seats
