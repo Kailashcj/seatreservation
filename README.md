@@ -18,9 +18,9 @@ A user of this app can perform following task using this code:
 4. View bookings in the system for a specific date
 5. Reservation and customer data stored persistently in mongoDB database.
     > show dbs
-        seats   0.000GB
+        "seats   0.000GB"
     > show tables
-        bookings
+        "bookings"
 
 # Requirements
 
