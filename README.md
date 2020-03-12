@@ -15,7 +15,12 @@ A user of this app can perform following task using this code:
 
 2. Web reservation of required seats for a given date and time based upon availability
 3. Walk-in reservation of seats using the same web app
-4. Reservation and customer data stored persistently in mongoDB database
+4. View bookings in the system for a specific date
+5. Reservation and customer data stored persistently in mongoDB database.
+    > show dbs
+        seats   0.000GB
+    > show tables
+        bookings
 
 # Requirements
 
@@ -37,6 +42,7 @@ Following version of binaries should be installed on a linux system or python vi
 
 # Known Limitations
 
+- Error and Exceptions are currently not handled in the code
 - Dummy customer id's is used in the code
 - Seat cancellation and releasing the seat back to available pool is not implemented
 - Claim seat feature, which releases the seat to available pool if a customer doesn't show-up within 30 minutes is not implemented
@@ -50,6 +56,7 @@ needed for a restaurant like, billing, food ordering etc. This can be discussed.
 2. run mongo on a terminal by typing command $ mongo
 3. run flask app on a terminal by typing command $ python3 app.py
 4. Open a browser and run below url's:
+    - View Bookings : http://127.0.0.1:5000/viewbookings?date=2020-03-14
     - Check Seat availability: http://127.0.0.1:5000/checkseatavailability?date=2020-03-15
     - Book Seat : http://127.0.0.1:5000/book?date=2020-03-14&time=1000&customer_id=y&num_people=2
 5. You can modify the date, time and num_people values in above URL's
